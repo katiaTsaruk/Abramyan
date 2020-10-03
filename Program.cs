@@ -1,341 +1,475 @@
 ﻿using System;
 
-namespace dz1
+namespace dz2
 {
     class Program
     {
-        static void int3()
+        static void case1()
         {
-            int n = 5000;
-            int a = n / 1024;
-            Console.WriteLine(a);
-        }
-        static void int6()
-        {
-            int n = 54;
-            int a = n / 10;
-            int b = n % 10;
-            Console.WriteLine($"{a} {b}");
-        }
-        static void int9()
-        {
-            int n = 534;
-            int a = n / 100;            
-            Console.WriteLine($"{a}");
-        }
-        static void int12()
-        {
-            int n = 378;
-            int a = n / 100;
-            int k = n / 10;
-            int b = k % 10;
-            int c = n % 10;
-            Console.WriteLine($"{c}{b}{a}");
-        }
-        static void int15()
-        {
-            int n = 378;
-            int a = n / 100;
-            int k = n / 10;
-            int b = k % 10;
-            int c = n % 10;
-            Console.WriteLine($"{b}{a}{c}");
-        }
-        static void int18()
-        {
-            int n = 23378;
-            int a = n / 1000;
-            int b = a % 10;
-            Console.WriteLine($"{b}");
-        }
-        static void int21()
-        {
-            int n = 378;
-            int c = n % 60;
-            Console.WriteLine($"{c}");
-        }
-        static void int24()
-        {
-            int n = 125;
-            int c = n % 7;
-            Console.WriteLine($"{c}");
-        }
-        static void int27()
-        {
-            int n = 2;
-            int c = (n +4)% 7+1;
-            Console.WriteLine($"{c}");
-        }
-        static void int30()
-        {
-            int n = 2456;
-            int c = (n -1) % 100;
-            Console.WriteLine($"{c}");
-        }
-
-
-        static bool bool3()
-        {
-            int n = 44;
-            int a = n % 2;
-            bool b=a==0;
-            return b;
-        }
-        static bool bool6()
-        {
-            int a = 12;
-            int b = 45;
-            int c = 13;
-            bool n = a < b && b < c;
-            return n;
-        }
-        static bool bool9()
-        {
-            int a = 12;
-            int b = 31;
-            bool n = a % 2 == 1 || b % 2 == 1;
-            return n;
-        }
-        static bool bool12()
-        {
-            double a = 12;
-            double b = 31;
-            double c = -16;
-            bool n = a > 0 && b > 0 && c > 0;
-            return n;
-        }
-        static bool bool15()
-        {
-            double a = 12;
-            double b = 31;
-            double c = -16;
-            bool n = (a < 0 && b > 0 && c > 0) || (a > 0 && b < 0 && c > 0) || (a > 0 && b > 0 && c < 0);
-            return n;
-        }
-        static bool bool18()
-        {
-            double a = 12;
-            double b = 31;
-            double c = -16;
-            bool n = a==b || b==c || c==a;
-            return n;
-        }
-        static bool bool21()
-        {
-            int n = 378;
-            int a = n / 100;
-            int k = n / 10;
-            int b = k % 10;
-            int c = n % 10;
-            bool f = a < b && b < c;
-            return f;
-        }
-        static bool bool24()
-        {
-            double a = 3;
-            double b = -20;
-            double c = -23;
-            double d = b * b - 4 * a * c;
-            bool n = d >= 0;
-            return n;
-        }
-        static bool bool27()
-        {
-            int x = 378;
-            int y = 23;
-            bool f = y<0;
-            return f;
-        }
-        static bool bool30()
-        {
-            double a = 12;
-            double b = 31;
-            double c = 16;
-            bool n = a == b && b == c ;
-            return n;
-        }
-        static bool bool33()
-        {
-            double a = 12;
-            double b = 31;
-            double c = 16;
-            bool n = a + c > b && b + a > c && b + c > a;
-            return n;
-        }
-        static bool bool36()
-        {
-            double x1 = 5;
-            double y1 = 3;
-            double x2 = 1;
-            double y2 = 4;
-            bool n = x1 == x2 || y1 == y2;
-            return n;
-        }
-        static bool bool39()
-        {
-            double x1 = 5;
-            double y1 = 3;
-            double x2 = 1;
-            double y2 = 4;
-            bool n = x1 == x2 || y1 == y2 || Math.Abs(x1-x2)== Math.Abs(y1 - y2);
-            return n;
-        }
-
-
-        static void if3()
-        {
-            double a =0;
-            if (a > 0)
+            int n = 5;
+            switch (n)
             {
-                a = a + 1;
+                case 1:
+                    Console.WriteLine($"Monday");
+                    break;
+                case 2:
+                    Console.WriteLine($"Tuesday");
+                    break;
+                case 3:
+                    Console.WriteLine($"Wednesday");
+                    break;
+                case 4:
+                    Console.WriteLine($"Thursday");
+                    break;
+                case 5:
+                    Console.WriteLine($"Friday");
+                    break;
+                case 6:
+                    Console.WriteLine($"Saturday");
+                    break;
+                case 7:
+                    Console.WriteLine($"Sunday");
+                    break;
             }
-            else if (a < 0)
-            {
-                a = a - 2;
-            }
-            else
-                a = 10;
-            Console.WriteLine(a);
         }
-        static void if6()
+        static void case18()
+            {
+                int n = 231;
+                int a = n / 100;
+                int c = n % 10;
+                int b = (n % 100) / 10;
+                string s;
+                switch (a)
+                {
+                    case 1:
+                        Console.Write($"Сто ");
+                        break;
+                    case 2:
+                        Console.Write($"Двести ");
+                        break;
+                    case 3:
+                        Console.Write($"Триста ");
+                        break;
+                    case 4:
+                        Console.Write($"Четыриста ");
+                        break;
+                    case 5:
+                        Console.Write($"Пятсот ");
+                        break;
+                    case 6:
+                        Console.Write($"Шестсот ");
+                        break;
+                    case 7:
+                        Console.Write($"Семсот ");
+                        break;
+                    case 8:
+                        Console.Write($"Восемсот ");
+                        break;
+                    case 9:
+                        Console.Write($"Деветсот ");
+                        break;
+                }
+            switch (b)
+            {
+                case 1:
+                    switch (c)
+                    {
+                        case 1:
+                            Console.Write($"одинадцать");
+                            break;
+                        case 2:
+                            Console.Write($"двенадцать");
+                            break;
+                        case 3:
+                            Console.Write($"тринадцать");
+                            break;
+                        case 4:
+                            Console.Write($"четырнадцать");
+                            break;
+                        case 5:
+                            Console.Write($"пятнадцать");
+                            break;
+                        case 6:
+                            Console.Write($"шестнадцать");
+                            break;
+                        case 7:
+                            Console.Write($"семьнадцать");
+                            break;
+                        case 8:
+                            Console.Write($"восемнадцать");
+                            break;
+                        case 9:
+                            Console.Write($"девятнадцать");
+                            break;
+                    }
+                    break;
+                case 2:
+                    Console.Write($"двадцать ");
+                    break;
+                case 3:
+                    Console.Write($"тридцать ");
+                    break;
+                case 4:
+                    Console.Write($"сорок ");
+                    break;
+                case 5:
+                    Console.Write($"пятьдесят ");
+                    break;
+                case 6:
+                    Console.Write($"шестьдеся ");
+                    break;
+                case 7:
+                    Console.Write($"семьдесят ");
+                    break;
+                case 8:
+                    Console.Write($"восемьдесят ");
+                    break;
+                case 9:
+                    Console.Write($"девяносто ");
+                    break;
+            }
+
+            if (b != 1)
+            {
+                switch (c)
+                {
+                    case 1:
+                        s = "один";
+                        Console.WriteLine(s);
+                        break;
+                    case 2:
+                        s = "два";
+                        Console.WriteLine(s);
+                        break;
+                    case 3:
+                        s = "три";
+                        Console.WriteLine(s);
+                        break;
+                    case 4:
+                        s = "четыре";
+                        Console.WriteLine(s);
+                        break;
+                    case 5:
+                        s = "пять";
+                        Console.WriteLine(s);
+                        break;
+                    case 6:
+                        s = "шесть";
+                        Console.WriteLine(s);
+                        break;
+                    case 7:
+                        s = "семь";
+                        Console.WriteLine(s);
+                        break;
+                    case 8:
+                        s = "восемь";
+                        Console.WriteLine(s);
+                        break;
+                    case 9:
+                        s = "девять";
+                        Console.WriteLine(s);
+                        break;
+                }                
+            }   
+                        
+        }
+        static void case20()
         {
-            double a = 0;
-            double b = 4;
-            if (a > b)
+            int m = 8;
+            int d = 5;
+            switch (m)
+            {
+                case 1:
+                    if (d>=20)
+                    Console.WriteLine($"Водолей");
+                    else
+                        Console.WriteLine($"Козерог");
+                    break;
+                case 2:
+                    if (d >= 19)
+                        Console.WriteLine($"Рыба");
+                    else
+                        Console.WriteLine($"Водолей");
+                    break;                    
+                case 3:
+                    if (d >= 21)
+                        Console.WriteLine($"Овен");
+                    else
+                        Console.WriteLine($"Рыба");
+                    break;
+                case 4:
+                    if (d >= 20)
+                        Console.WriteLine($"Телец");
+                    else
+                        Console.WriteLine($"Овен");
+                    break;
+                case 5:
+                    if (d >= 21)
+                        Console.WriteLine($"Близнецы");
+                    else
+                        Console.WriteLine($"Телец");
+                    break;
+                case 6:
+                    if (d >= 22)
+                        Console.WriteLine($"Рак");
+                    else
+                        Console.WriteLine($"Близнецы");
+                    break;
+                case 7:
+                    if (d >= 23)
+                        Console.WriteLine($"Лев");
+                    else
+                        Console.WriteLine($"Рак");
+                    break;
+                case 8:
+                    if (d >= 23)
+                        Console.WriteLine($"Дева");
+                    else
+                        Console.WriteLine($"Лев");
+                    break;
+                case 9:
+                    if (d >= 23)
+                        Console.WriteLine($"Весы");
+                    else
+                        Console.WriteLine($"Дева");
+                    break;
+                case 10:
+                    if (d >= 23)
+                        Console.WriteLine($"Скорпион");
+                    else
+                        Console.WriteLine($"Весы");
+                    break;
+                case 11:
+                    if (d >= 23)
+                        Console.WriteLine($"Стрелец");
+                    else
+                        Console.WriteLine($"Скорпион");
+                    break;
+                case 12:
+                    if (d >= 22)
+                        Console.WriteLine($"Козерог");
+                    else
+                        Console.WriteLine($"Стрелец");
+                    break;
+            }
+        }
+        static void for1()
+        {
+            int n = 4;
+            int k = 5;
+            for (int i=1; i <= n; i++)
+                Console.WriteLine(k);
+        }
+        static void for4()
+        {
+            int n = 4;            
+            for (int i = 1; i <= 10; i++)
+                Console.WriteLine(n*i);
+        }
+        static void for7()
+        {
+            int a = 4;
+            int b = 6;
+            int k = 0;
+            for (int i = a; i <= b; i++)
+                k+= i;
+                Console.WriteLine(k);
+        }
+        static void for10()
+        {
+            double n = 3;            
+            double k = 0;
+            for (double i = 1; i <= n; i++)
+                k =k+ 1/i;
+            Console.WriteLine(k);
+        }
+        static void for13()
+        {
+            double n = 4;
+            double k = 0;
+            for (int i = 1; i <= n ; i +=2)
+                k = k + 1 + i / Math.Pow(10, Math.Abs(i).ToString().Length);
+            for (int i = 2; i <= n; i +=2)
+                k = k - 1 - i / Math.Pow(10, Math.Abs(i).ToString().Length);
+            Console.WriteLine(k);
+        }
+        static void for16()
+        {
+            double n = 3;
+            double a = 2;
+            for (double i = 1; i <= n; i++)
+                Console.WriteLine(Math.Pow(a, i));
+        }
+        static void for19()
+        {
+            double n = 3;
+            double a = 1;
+            for (double i = 1; i <= n; i++)
+                a *= i;
                 Console.WriteLine(a);
-            else
-                Console.WriteLine(b);            
         }
-        static void if9()
+        static void for22()
         {
-            double a = 0;
-            double b = 4;
-            double n;
-            if (a > b)
+            double n = 2;
+            double x = 2;
+            double a = 1;
+            double k = 1;
+            for (double i = 1; i <= n; i++)
             {
-                n = a;
-                a = b;
-                b = n;
-
+                k *= i;
+                a = a + Math.Pow(x, i) * k;
+            }                
+            Console.WriteLine(a);
+        }
+        static void for25()
+        {
+            double n = 5;
+            double x = 0.2;
+            double a = 0;            
+            for (double i = 1; i <= n; i+=2)
+            {
+                a = a + Math.Pow(-1, i - 1) * Math.Pow(x, i) / i;
+            }
+            for (double i = 2; i <= n; i += 2)
+            {
+                a = a - Math.Pow(-1, i - 1) * Math.Pow(x, i) / i;
+            }
+            Console.WriteLine(a);
+        }
+        static void for28()
+        {
+            double n = 5;
+            double x = 0.2;
+            double a = 1;
+            double k = 1;
+            double b = 1;
+            for (double i = 1; i <= n; i++)
+            {
+                k = k * (2 * i - 1);
+                b = b * 2 * i;
+                a = a + Math.Pow(x, i) * k * Math.Pow(-1, i - 1) / b;
+            }
+            Console.WriteLine(a);
+        }
+        static void for31()
+        {
+            double n = 2;            
+            double a = 2;
+            Console.WriteLine(a);
+            for (double i = 2; i <= n; i++)
+            {
+                a = 2 + 1/a;
+                Console.WriteLine(a);                
+            }
+           
+        }
+        static void for34()
+        {
+            double n = 4;
+            double a = 1;
+            double b = 2;
+            Console.WriteLine(a);
+            Console.WriteLine(b);
+            for (double i = 3; i <= n; i++)
+            {
+                if (i % 2 != 0)
+                { 
+                    a = (a + 2 * b) / 3;
+                    Console.WriteLine(a);
+                }                   
+                else
+                { 
+                    b = (b + 2 * a) / 3;
+                    Console.WriteLine(b);
+                }                   
+            }
+        }
+        static void for37()
+        {
+            double n = 3;
+            double a = 0;
+            for (double i = 1; i <= n; i++)
+                a = a + Math.Pow(i, i);
+            Console.WriteLine(a);
+        }
+        static void for40()
+        {
+            int a = 4;
+            int b = 6;
+            int k = a-1;
+            for (int i = 1; i <= b - a + 1; i++)
+            {
+                k++;
+                for (int s = 1; s <= i; s++) 
+                    Console.WriteLine(k);
+            }
+        }
+        static void while1()
+        {
+            int a = 23;
+            int b = 4;
+            while (a - b > 0) 
+            {
+                a = a - b;
+            }
+            Console.WriteLine(a);
+        }
+        static void while4()
+        {
+            int a = 27;
+            int b = 1;
+            while (b < a) 
+            {
+                b *= 3;
+            }
+            bool n = a == b;
+            Console.WriteLine(n);
+        }
+        static void while7()
+        {
+            int n = 27;
+            int k = 0;
+            while (k*k < n)
+            {
+                k++;
             }            
-        Console.WriteLine($"{a}, {b}");            
+            Console.WriteLine(k);
         }
-        static void if12()
+        static void while10()
         {
-            double a = 0;
-            double b = 4;
-            double c = -12;
-            if (a > b && b>c)
-            Console.WriteLine(c);
-            else if(a < b && b < c)
-                Console.WriteLine(c);
-            else
-                Console.WriteLine(b);
+            int n = 26;
+            int k = 0;
+            while (Math.Pow(3,k) < n)
+            {
+                k++;
+            }
+            Console.WriteLine(k-1);
         }
-        static void if15()
-        {
-            double a = 0;
-            double b = 4;
-            double c = -12;
-            if (a > b && b > c)
-                Console.WriteLine(a+b);
-            else if (a < b && b < c)
-                Console.WriteLine(b+c);
-            else
-                Console.WriteLine(a+c);
-        }
-        static void if18()
-        {
-            int[] array = { 12, 4, 4 };
-            if (array[0]== array[1])
-                Console.WriteLine(3);
-            else if (array[0] == array[2])
-                Console.WriteLine(2);
-            else
-                Console.WriteLine(1);
-        }
-        static void if21()
-        {
-            double x = 5;
-            double y = -37;
-            if (x==y && x==0)
-                Console.WriteLine(0);
-            else if (x==0)
-                Console.WriteLine(2);
-            else if(y==0)
-                Console.WriteLine(1);
-            else
-                Console.WriteLine(3);
-        }
-        static void if24()
-        {
-            double x = 5;            
-            if (x>0)
-                Console.WriteLine(2*Math.Sin(x));            
-            else
-                Console.WriteLine(6-x);
-        }
-        static void if27()
-        {
-            double x = 5;
-            if (x < 0)
-                Console.WriteLine(0);
-            else if (Math.Truncate(x)% 2 == 0) 
-                Console.WriteLine(1);
-            else 
-                Console.WriteLine(-1);
-        }
-        static void if30()
-        {
-            int x = 45;            
-            if (x % 2 != 0)
-                Console.Write($"Нечетное"); 
-            else 
-                Console.Write($"Четное"); 
-            if (x / 10 == 0)
-                Console.Write($" однозначное");
-            else if (x / 10 != 0 && x / 100 == 0)
-                Console.Write($" двузначное");
-            else
-                Console.Write($" трехзначное");
-            Console.Write($" число");
-        }
-
+        
         static void Main(string[] args)
         {
-            int3();
-            int6();
-            int9();
-            int12();
-            int15();
-            int18();
-            int21();
-            int24();
-            int27();
-            int30();
-            Console.WriteLine(bool3());
-            Console.WriteLine(bool6());
-            Console.WriteLine(bool9());
-            Console.WriteLine(bool12());
-            Console.WriteLine(bool15());
-            Console.WriteLine(bool18());
-            Console.WriteLine(bool21());
-            Console.WriteLine(bool24());
-            Console.WriteLine(bool27());
-            Console.WriteLine(bool30());
-            Console.WriteLine(bool33());
-            Console.WriteLine(bool36());
-            Console.WriteLine(bool39());
-            if3();
-            if6();
-            if9();
-            if12();
-            if15();
-            if18();
-            if21();
-            if24();
-            if27();
-            if30();
+            case1();
+            case18();
+            case20();
+            for1();
+            for4();
+            for7();
+            for10();
+            for13();
+            for16();
+            for19();
+            for22();
+            for25();
+            for28();
+            for31();
+            for34();
+            for37();
+            for40();
+            while1();
+            while4();
+            while7();
+            while10();
+            
         }
     }
 }
