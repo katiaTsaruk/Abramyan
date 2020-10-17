@@ -126,7 +126,7 @@ namespace DzProc
         }
         static void Main(string[] args)
         {
-            /*proc16();
+            proc16();
             proc17();
             Console.WriteLine(CircleS(int.Parse(Console.ReadLine())));
             Console.WriteLine(RingS(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
@@ -134,7 +134,7 @@ namespace DzProc
             Console.WriteLine(SumRange(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
             Console.WriteLine(calc(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
             Console.WriteLine(Quarter(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
-            proc24();*/
+            proc24();
             proc25();
         }   
     }
