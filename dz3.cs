@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 
 namespace dz3
 {
     class Program
-    {
+    {        
         static void series1(double[] arr)
         {
             double a = 0;
@@ -292,6 +292,184 @@ namespace dz3
             }
             Console.WriteLine($"{k} ");
         }
+        static void series24()
+        {
+            double[] arr = { 1, 2, 3, 5, 0, 7, 0, 7, 8, 0, 8, 6, 0, 7, 0, 5 };
+            double k = 0;
+            for (int i = arr.Length - 1; i >=0;  i--)
+            {
+                if (arr[i]==0)
+                {
+                    i--;
+                    while (arr[i] != 0)
+                    {
+                        k += arr[i];
+                        i--;
+                    }
+                    break;
+                }                
+            }
+            Console.WriteLine($"{k} ");
+        }
+        static void series26(double[] arr)
+        {            
+            double k = 3;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"{Math.Pow(arr[i], k)} ");
+            }
+            Console.WriteLine($" ");
+        }
+        static void series28(double[] arr)
+        {
+            double k = arr.Length;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write($"{Math.Pow(arr[i], k)} ");
+                k--;
+            }
+            Console.WriteLine($" ");
+        }
+        static void series30()
+        {
+            int n = int.Parse(Console.ReadLine());
+            Random r = new Random();
+            int k = int.Parse(Console.ReadLine());
+            double res = 0;
+
+            for (int j = 0; j < k; j++)
+            {
+                int[] arr = new int[n];
+                for (int i = 0; i < n; i++) 
+                {
+                    arr[i] = r.Next(-100, 100);
+                    res+= arr[i];
+                }
+                Console.WriteLine(res);
+            }
+        }
+        static void series32()
+        {
+            int n = int.Parse(Console.ReadLine());
+            Random r = new Random();
+            int k = int.Parse(Console.ReadLine());
+            int res = 0;
+
+            for (int j = 0; j < k; j++)
+            {
+                int[] arr = new int[n];
+                for (int i = 0; i < n; i++)
+                {
+                    arr[i] = r.Next(-100, 100);
+                    if (arr[i] == 2)
+                        res = i;                   
+                }
+                Console.WriteLine(res);
+            }
+        }
+        static void series34()
+        {
+            int n = int.Parse(Console.ReadLine());
+            Random r = new Random();
+            int k = int.Parse(Console.ReadLine());
+            int res = 0;
+            int check = 0;
+
+            for (int j = 0; j < k; j++)
+            {
+                int[] arr = new int[n];
+                for (int i = 0; i < n; i++)
+                {
+                    arr[i] = r.Next(-100, 100);
+                    res += arr[i];
+                    if (arr[i] == 2)
+                    {
+                        check =2;
+                    }                      
+                }
+                if (check == 2)
+                    Console.WriteLine(res);
+                else
+                    Console.WriteLine(0);
+            }
+        }
+        static void series36()
+        {
+            int k = int.Parse(Console.ReadLine());
+            int counter = k;
+            for (int i = 0; i < k; i++)
+            {
+                int prev = int.Parse(Console.ReadLine());
+                int val = int.Parse(Console.ReadLine());
+                bool flag = true;
+                do
+                {
+                    if (prev >= val)
+                    {
+                        if (flag) counter--;
+                        flag = false;
+                    }
+                    prev = val;
+                    val = int.Parse(Console.ReadLine());
+                }
+                while (val != 0);
+            }
+            Console.WriteLine(counter);
+        }
+        static void series38()
+        {
+            int k = int.Parse(Console.ReadLine());            
+            for (int i = 0; i < k; i++)
+            {
+                int prev = int.Parse(Console.ReadLine());
+                int val = int.Parse(Console.ReadLine());                
+                int check = 2;
+                do
+                {
+                    if (prev > val && check!=0)
+                    {
+                        if (check != 1)
+                            check = -1;
+                        else
+                            check=0;
+                    }
+                    else if (prev < val && check!=0)
+                        if (check != -1)
+                            check = 1;
+                        else
+                            check = 0;
+                    prev = val;
+                    val = int.Parse(Console.ReadLine());
+                }
+                while (val != 0);
+                Console.WriteLine(check);
+            }
+        }
+        static void series40()
+        {
+            int k = int.Parse(Console.ReadLine());
+            for (int i = 0; i < k; i++)
+            {
+                int prev2 = int.Parse(Console.ReadLine());
+                int prev1 = int.Parse(Console.ReadLine());
+                int val = int.Parse(Console.ReadLine());
+                int res = 2;
+                do
+                {
+                    if ((prev1 > prev2 && prev1 > val && res!=0) || (prev1 < prev2 && prev1 < val && res != 0))
+                    {
+                        res++;
+                    }
+                    else
+                        res = 0;
+                    prev2 = prev1;
+                    prev1 = val;
+                    val = int.Parse(Console.ReadLine());
+                }
+                while (val != 0);
+                Console.WriteLine(res);
+            }
+        }
         static void Main(string[] args)
         {
             double[] arr =  { 1.4, -4, 5.7, 6, 5, -7.6, 8, 4, 2.3, 5 };
@@ -319,23 +497,15 @@ namespace dz3
             series21();
             series22();
             series23();
-            /*series24(arr);
-            series25(arr);
+            series24();
             series26(arr);
-            series27(arr);
-            series28(arr);
-            series29(arr);
-            series30(arr);
-            series31(arr);
-            series32(arr);
-            series33(arr);
-            series34(arr);
-            series35(arr);
-            series36(arr);
-            series37(arr);
-            series38(arr);
-            series39(arr);
-            series40(arr);*/
+            series28(arr);            
+            series30();            
+            series32();            
+            series34();            
+            series36();            
+            series38();            
+            series40();
             
         }        
     }
