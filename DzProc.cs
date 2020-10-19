@@ -1,4 +1,6 @@
-﻿using System;
+using System;
+using System.Reflection.Metadata.Ecma335;
+using System.Security.Cryptography;
 
 namespace DzProc
 {
@@ -103,8 +105,10 @@ namespace DzProc
         {
             int res=0;
             for (int i = 0; i < 10; i++)
+            {
                 if(Even(int.Parse(Console.ReadLine())))
                     res++;
+            }
             Console.WriteLine(res);
         }
         static bool IsSquare(int k)
@@ -120,9 +124,151 @@ namespace DzProc
         {
             int res = 0;
             for (int i = 0; i < 10; i++)
+            {
                 if (IsSquare(int.Parse(Console.ReadLine())))
                     res++;
+            }
             Console.WriteLine(res);
+        }
+        static bool IsPower5(int k)
+        {
+            bool res = true;
+            for (int i = 1; i <= Math.Log10(k) / Math.Log10(5); i++) 
+            {
+                if( k == Math.Pow(5, i))
+                    res = true;
+                else res = false;
+
+            }
+            return res;
+        }
+        static void proc26()
+        {
+            int res = 0;
+            for (int i = 0; i < 10; i++)
+            { 
+                if (IsPower5(int.Parse(Console.ReadLine())))
+                    res++;
+            }
+               
+            Console.WriteLine(res);
+        }
+        static bool IsPowerN(int k, int n)
+        {
+            bool res = true;
+            for (int i = 1; i <= Math.Log10(k) / Math.Log10(n); i++)
+            {
+                if (k == Math.Pow(n, i))
+                    res = true;
+                else res = false;
+
+            }
+            return res;
+        }
+        static bool IsPrime(int n)
+        {
+            bool res = false;
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n > 1 && n % i != 0)
+                    res = true;
+                else res = false;
+            }
+            return res;
+        }
+        static int DigitCount(int k)
+        {
+            int res = 0;
+            while (k >= 1) 
+            {
+                k = k / 10;
+                res++;
+            }
+            return res;
+        }
+        static int DigitN(int k, int n)
+        {
+            int res;
+            if (DigitCount(k) >= n)
+            {
+                for (int i = 1; i < n; i++)
+                {
+                    k = k / 10;
+                }
+                res = k % 10;
+            }
+            else 
+                res = -1;
+            return res;
+        }
+        static bool IsPalindrom(int k)
+        {
+            bool res = true;
+            int digitAmount = DigitCount(k);
+            for (int i = 1; i <= DigitCount(k) / 2; i++) 
+            {
+                if (DigitN(k, i) != DigitN(k, digitAmount))
+                {
+                    res = false;
+                    break;
+                }
+                digitAmount--;
+            }
+            return res;
+        }
+        static double DegToRad(double deg)
+        {
+            double rad = deg/ 180 * 3.14;
+            return rad;
+        }
+        static double RadToDeg(double rad)
+        {
+            double deg = rad * 180 / 3.14;
+            return deg;
+        }
+        static double Fact(int n)
+        {
+            double res = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                res *= i;
+            }
+            return res;
+        }
+        static double Fact2(int n)
+        {
+            double res = 1;
+            if (n % 2 == 0) 
+            {
+                for (int i = 2; i <= n; i+=2)
+                {
+                    res *= i;
+                }            
+            }
+            else
+            {
+                for (int i = 1; i <= n; i += 2)
+                {
+                    res *= i;
+                }
+            }
+            return res;
+        }
+        static int Fib(int n)
+        {
+            int prev = 1;
+            int prevprev = 1;
+            int res = 1;
+            if (n > 2) 
+            {
+                for(int i=3;i<=n;i++)
+                {
+                    res = prev + prevprev;
+                    prevprev = prev;
+                    prev = res;
+                }
+            }
+            return res;
         }
         static void Main(string[] args)
         {
@@ -136,6 +282,18 @@ namespace DzProc
             Console.WriteLine(Quarter(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
             proc24();
             proc25();
+            proc26();
+            Console.WriteLine(IsPower5(int.Parse(Console.ReadLine())));
+            Console.WriteLine(IsPowerN(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
+            Console.WriteLine(IsPrime(int.Parse(Console.ReadLine())));
+            Console.WriteLine(DigitCount(int.Parse(Console.ReadLine())));
+            Console.WriteLine(DigitN(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())));
+            Console.WriteLine(IsPalindrom(int.Parse(Console.ReadLine())));
+            Console.WriteLine(DegToRad(int.Parse(Console.ReadLine())));
+            Console.WriteLine(RadToDeg(int.Parse(Console.ReadLine())));
+            Console.WriteLine(Fact(int.Parse(Console.ReadLine())));
+            Console.WriteLine(Fact2(int.Parse(Console.ReadLine())));
+            Console.WriteLine(Fib(int.Parse(Console.ReadLine())));
         }   
     }
 }
